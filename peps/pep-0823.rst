@@ -220,7 +220,7 @@ When an index gets a request with ``Prefer: no-analytics``, it SHOULD:
 
 Indexes SHOULD NOT:
 
-- Slow down or degrade service for opted out requests.
+- Slow down or degrade service for opted-out requests.
 - Require login or API keys to honor the opt out.
 - Tell third parties which requests opted out.
 
