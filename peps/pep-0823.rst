@@ -20,7 +20,7 @@ document are to be interpreted as described in :rfc:`2119`.
 Package indexes are starting to share download data with third parties. Users
 have no way to say "don't track me." This PEP fixes that.
 
-It defines ``PIP_NO_ANALYTICS``, an environment variable that package tools
+It defines ``PY_NO_ANALYTICS``, an environment variable that package tools
 like pip, uv, Hatch, PDM, and Poetry SHOULD check. When set, tools send a
 ``Prefer: no-analytics`` header to indexes. Indexes SHOULD then exclude that
 request from any data they share externally.
@@ -110,29 +110,24 @@ Specification
 Environment Variable
 --------------------
 
-Package installation tools SHOULD recognize ``PIP_NO_ANALYTICS``. When set
+Package installation tools SHOULD recognize ``PY_NO_ANALYTICS``. When set
 to any value (``1``, ``true``, ``yes``, anything nonempty), the tool SHOULD
 signal the opt out to package indexes.
 
-These variables also work:
-
-- ``PY_NO_ANALYTICS``
-- ``PYTHON_NO_ANALYTICS``
-
-If any of them is set, treat it as an opt out.
+Tools SHOULD also recognize ``INDEX_NO_ANALYTICS`` as an alias.
 
 Example:
 
 .. code-block:: bash
 
-    export PIP_NO_ANALYTICS=1
+    export PY_NO_ANALYTICS=1
     pip install requests
 
 Or for one command:
 
 .. code-block:: bash
 
-    PIP_NO_ANALYTICS=1 pip install requests
+    PY_NO_ANALYTICS=1 pip install requests
 
 
 Configuration File Option
@@ -298,9 +293,9 @@ Add this to your shell profile:
 
 .. code-block:: bash
 
-    export PIP_NO_ANALYTICS=1
+    export PY_NO_ANALYTICS=1
 
-Done. Every `pip install`, `uv sync`, `hatch build`, whatever. They all respect it.
+Done. Every ``pip install``, ``uv sync``, ``hatch build``, whatever. They all respect it.
 
 For CI/CD, set it in your pipeline config or container environment.
 
@@ -316,7 +311,7 @@ add the header to your HTTP requests.
     import os
 
     def wants_analytics_opt_out():
-        for var in ('PIP_NO_ANALYTICS', 'PY_NO_ANALYTICS', 'PYTHON_NO_ANALYTICS'):
+        for var in ('PY_NO_ANALYTICS', 'INDEX_NO_ANALYTICS'):
             if os.environ.get(var):
                 return True
         return False
@@ -368,10 +363,6 @@ exists for exactly this purpose. Use the standard.
 
 Open Issues
 ===========
-
-**Variable naming.** ``PIP_NO_ANALYTICS`` is specific but familiar.
-``PYTHON_NO_ANALYTICS`` is broader. Current spec accepts both. Is that the
-right call?
 
 **What counts as analytics.** This targets third party data sharing. Internal
 stats, abuse prevention, that stays. Is the line clear enough?
