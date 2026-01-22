@@ -63,12 +63,15 @@ Why Opt Out Instead of Opt In
 The obvious question: why not make analytics opt in? Require explicit consent
 before sharing data?
 
-Three reasons. First, it would break existing analytics infrastructure that
+Four reasons. First, it would break existing analytics infrastructure that
 indexes and maintainers rely on. Download counts, geographic distribution,
 abuse detection. Second, most users genuinely don't care about aggregate
 stats. The ones who do care are sophisticated enough to set an env var.
 Third, opt out matches how this works elsewhere. Browser Do Not Track works
-the same way.
+the same way. Fourth, opt-in data is far less valuable. Analytics companies
+want complete datasets. If only 2% of users opt in, the data reveals almost
+nothing about real-world usage patterns. Opt-out gives them the coverage they
+need while still letting privacy-conscious users decline.
 
 That said, indexes should document what they collect and who they share it
 with. Users can't make informed choices without information.
@@ -346,7 +349,9 @@ Rejected Ideas
 ==============
 
 **Opt in instead of opt out.** Would break existing analytics. Most users
-don't care enough to opt in. Opt out matches industry practice.
+don't care enough to opt in. Opt out matches industry practice. Also, opt-in
+data has little value—analytics companies need complete datasets, not the 2%
+who bother clicking a checkbox.
 
 **Per package opt out.** Too complex. If you need that level of control,
 use network level filtering.
