@@ -212,10 +212,10 @@ they keep it. Who they share it with. How they handle the opt out header.
 
 When an index gets a request with ``Prefer: no-analytics``, it SHOULD:
 
-1. Return the package normally.
-2. Leave this request out of data sent to third party analytics.
-3. Still use the request for abuse prevention, rate limiting, operational
-   monitoring, and legal compliance like OFAC screening.
+* Return the package normally.
+* Leave this request out of data sent to third-party analytics.
+* Still use the request for abuse prevention, rate limiting, operational
+  monitoring, and legal compliance like OFAC screening.
 
 Indexes MAY still count these requests in aggregate stats they keep internal.
 
