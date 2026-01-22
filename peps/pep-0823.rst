@@ -81,7 +81,7 @@ Why an Environment Variable
 ---------------------------
 
 An environment variable works because you set it once and forget it. It
-applies to pip, uv, hatch, poetry, pdm, whatever tool you use tomorrow.
+applies to pip, uv, Hatch, Poetry, PDM, whatever tool you use tomorrow.
 It works in your shell, in Docker containers, in CI pipelines.
 
 Python already does this. ``PYTHONDONTWRITEBYTECODE`` stops .pyc files.
