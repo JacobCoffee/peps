@@ -112,8 +112,9 @@ Environment Variable
 --------------------
 
 Package installation tools SHOULD recognize ``PY_NO_ANALYTICS``. When set
-to any value (``1``, ``true``, ``yes``, anything nonempty), the tool SHOULD
-signal the opt out to package indexes.
+to any nonempty value (``1``, ``true``, ``yes``, etc.), the tool SHOULD
+signal the opt out to package indexes. An empty value (``PY_NO_ANALYTICS=``)
+or unset variable means analytics are allowed.
 
 Tools SHOULD also recognize ``INDEX_NO_ANALYTICS`` as an alias.
 
