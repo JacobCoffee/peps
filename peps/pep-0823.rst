@@ -171,9 +171,9 @@ client preferences.
 
 Indexes that support this SHOULD:
 
-1. Exclude requests with this header from data shared with third parties.
-2. Process the request normally. Return the package files.
-3. Keep collecting data they need for abuse prevention and operations.
+* Exclude requests with this header from data shared with third parties.
+* Process the request normally. Return the package files.
+* Keep collecting data they need for abuse prevention and operations.
 
 Indexes MAY still count these requests in aggregate stats they keep internal.
 
