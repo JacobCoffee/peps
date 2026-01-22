@@ -166,7 +166,7 @@ When opt out is active, tools SHOULD send this header:
 
     Prefer: no-analytics
 
-This uses RFC 7240's Prefer header. It's an existing standard for expressing
+This uses :rfc:`7240`'s Prefer header. It's an existing standard for expressing
 client preferences.
 
 Indexes that support this SHOULD:
