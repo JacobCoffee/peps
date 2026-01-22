@@ -303,7 +303,7 @@ Add this to your shell profile:
 
     export PIP_NO_ANALYTICS=1
 
-Done. Every pip install, uv sync, hatch build, whatever. They all respect it.
+Done. Every `pip install`, `uv sync`, `hatch build`, whatever. They all respect it.
 
 For CI/CD, set it in your pipeline config or container environment.
 
