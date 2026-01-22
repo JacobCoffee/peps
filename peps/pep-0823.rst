@@ -223,8 +223,8 @@ Indexes SHOULD NOT:
 - Tell third parties which requests opted out.
 
 
-Backwards Compatibility
-=======================
+Backward Compatibility
+======================
 
 This is purely additive. Tools that don't implement it keep working. Indexes
 that don't recognize the header ignore it. Users who don't set the variable
