@@ -18,7 +18,7 @@ Package indexes are starting to share download data with third parties. Users
 have no way to say "don't track me." This PEP fixes that.
 
 It defines ``PIP_NO_ANALYTICS``, an environment variable that package tools
-like pip, uv, hatch, pdm, and poetry SHOULD check. When set, tools send a
+like pip, uv, Hatch, PDM, and Poetry SHOULD check. When set, tools send a
 ``Prefer: no-analytics`` header to indexes. Indexes SHOULD then exclude that
 request from any data they share externally.
 
