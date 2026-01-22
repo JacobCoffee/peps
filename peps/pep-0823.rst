@@ -14,6 +14,9 @@ Post-History: Pending
 Abstract
 ========
 
+The key words "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", and "MAY" in this
+document are to be interpreted as described in :rfc:`2119`.
+
 Package indexes are starting to share download data with third parties. Users
 have no way to say "don't track me." This PEP fixes that.
 
@@ -169,14 +172,6 @@ When opt out is active, tools SHOULD send this header:
 This uses :rfc:`7240`'s Prefer header. It's an existing standard for expressing
 client preferences.
 
-Indexes that support this SHOULD:
-
-* Exclude requests with this header from data shared with third parties.
-* Process the request normally. Return the package files.
-* Keep collecting data they need for abuse prevention and operations.
-
-Indexes MAY still count these requests in aggregate stats they keep internal.
-
 
 User Agent Suffix
 -----------------
@@ -222,6 +217,8 @@ When an index gets a request with ``Prefer: no-analytics``, it SHOULD:
 3. Still use the request for abuse prevention, rate limiting, operational
    monitoring, and legal compliance like OFAC screening.
 
+Indexes MAY still count these requests in aggregate stats they keep internal.
+
 Indexes SHOULD NOT:
 
 - Slow down or degrade service for opted-out requests.
@@ -246,10 +243,10 @@ Adoption and Backporting
 This standard only works if users can actually use it. That means tools need
 to ship support soon, not in some future release that lands in two years.
 
-Tool maintainers SHOULD backport this to all currently supported release
-branches. For pip specifically, this should go into whatever versions still
-receive updates. The implementation is small (check an env var, add a header)
-and carries no risk of breaking existing behavior.
+Tool maintainers SHOULD include this in their next release. Tools that maintain
+multiple release branches SHOULD backport to currently supported versions where
+feasible. The implementation is small (check an env var, add a header) and
+carries no risk of breaking existing behavior.
 
 Backporting further than supported versions is encouraged where feasible.
 Many users and organizations run older pip versions. The more versions that
