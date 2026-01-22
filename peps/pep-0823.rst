@@ -1,7 +1,7 @@
 PEP: 823
 Title: Standard Mechanism for Opting Out of Package Index Data Collection
-Author: Jacob Coffee <jacob@python.org> 
-Sponsor: TBD 
+Author: Jacob Coffee <jacob@python.org>
+Sponsor: TBD
 PEP-Delegate: TBD
 Discussions-To: Pending
 Status: Draft
