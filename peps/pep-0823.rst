@@ -191,7 +191,7 @@ Some proxies strip headers. This provides a fallback. The Prefer header is
 the primary signal.
 
 
-Command Line Flag
+Command-Line Flag
 -----------------
 
 Tools MAY offer a flag:
