@@ -365,7 +365,7 @@ actually honored your preference. Unenforceable.
 
 **Machine readable privacy policies.** Good idea, different PEP.
 
-**Custom header like X-PyPI-No-Analytics.** RFC 7240's Prefer header already
+**Custom header like X-PyPI-No-Analytics.** :rfc:`7240`'s Prefer header already
 exists for exactly this purpose. Use the standard.
 
 
