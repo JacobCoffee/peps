@@ -250,7 +250,7 @@ Many users and organizations run older pip versions. The more versions that
 support this, the faster users get protection.
 
 Index operators like PyPI should implement header detection before or
-alongside any third party data sharing arrangements. Users can't opt out
+alongside any third-party data sharing arrangements. Users can't opt out
 of something if the index doesn't check for the signal.
 
 
@@ -330,7 +330,7 @@ For Index Operators
 
 Document your data practices. Check incoming requests for the Prefer header.
 When you see ``no-analytics``, filter that request out before sending
-anything to third party analytics providers.
+anything to third-party analytics providers.
 
 Keep serving packages normally. Keep your abuse detection working.
 
