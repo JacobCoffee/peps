@@ -173,7 +173,7 @@ client preferences.
 User Agent Suffix
 -----------------
 
-As a backup, tools MAY also append to their User Agent:
+As a backup, tools MAY also append to their User-Agent:
 
 .. code-block:: text
 
@@ -230,7 +230,7 @@ This is purely additive. Tools that don't implement it keep working. Indexes
 that don't recognize the header ignore it. Users who don't set the variable
 see no change.
 
-The only edge case: a proxy that strips Prefer headers. The User Agent
+The only edge case: a proxy that strips Prefer headers. The User-Agent
 fallback handles this.
 
 
