@@ -396,12 +396,6 @@ Thanks to the PSF for taking user privacy seriously when evaluating
 analytics partnerships.
 
 
-Footnotes
-=========
-
-.. _RFC 7240: https://datatracker.ietf.org/doc/html/rfc7240
-
-
 Copyright
 =========
 
