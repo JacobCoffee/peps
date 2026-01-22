@@ -113,7 +113,7 @@ Environment Variable
 
 Package installation tools SHOULD recognize ``PY_NO_ANALYTICS``. When set
 to any nonempty value (``1``, ``true``, ``yes``, etc.), the tool SHOULD
-signal the opt out to package indexes. An empty value (``PY_NO_ANALYTICS=``)
+signal the opt-out to package indexes. An empty value (``PY_NO_ANALYTICS=``)
 or unset variable means analytics are allowed.
 
 Tools SHOULD also recognize ``INDEX_NO_ANALYTICS`` as an alias.
@@ -160,7 +160,7 @@ Environment variables override config files.
 HTTP Header
 -----------
 
-When opt out is active, tools SHOULD send this header:
+When opt-out is active, tools SHOULD send this header:
 
 .. code-block:: text
 
@@ -192,7 +192,7 @@ Tools MAY offer a flag:
 
     pip install --no-analytics requests
 
-Or to override a configured opt out:
+Or to override a configured opt-out:
 
 .. code-block:: bash
 
@@ -205,7 +205,7 @@ What Indexes Should Do
 ----------------------
 
 Indexes SHOULD publish their data practices. What they collect. How long
-they keep it. Who they share it with. How they handle the opt out header.
+they keep it. Who they share it with. How they handle the opt-out header.
 
 When an index gets a request with ``Prefer: no-analytics``, it SHOULD:
 
@@ -219,7 +219,7 @@ Indexes MAY still count these requests in aggregate stats they keep internal.
 Indexes SHOULD NOT:
 
 - Slow down or degrade service for opted-out requests.
-- Require login or API keys to honor the opt out.
+- Require login or API keys to honor the opt-out.
 - Tell third parties which requests opted out.
 
 
@@ -257,7 +257,7 @@ of something if the index doesn't check for the signal.
 Security Implications
 =====================
 
-The opt out header doesn't grant access to anything. It just says "don't
+The opt-out header doesn't grant access to anything. It just says "don't
 share my data." Indexes should not make security decisions based on it.
 
 Opting out doesn't bypass abuse prevention. Indexes can and should keep
@@ -273,7 +273,7 @@ Privacy Considerations
 
 A few things to know:
 
-Opt out is forward looking. It doesn't delete data already collected.
+Opt-out is forward looking. It doesn't delete data already collected.
 
 Indexes aren't required to honor this. This PEP says SHOULD, not MUST.
 If you need guarantees, verify what your index actually does.
@@ -282,7 +282,7 @@ This only covers package downloads. Uploading packages, web browsing on
 pypi.org, account activity? Separate concerns. Out of scope here.
 
 Yes, opting out is itself a data point. An index could theoretically use
-opt out rates as a signal. The benefit of having the option outweighs this.
+opt-out rates as a signal. The benefit of having the option outweighs this.
 
 
 How to Teach This
@@ -305,7 +305,7 @@ For CI/CD, set it in your pipeline config or container environment.
 For Tool Authors
 ----------------
 
-Check the environment variables. Check your config. If either says opt out,
+Check the environment variables. Check your config. If either says opt-out,
 add the header to your HTTP requests.
 
 .. code-block:: python
@@ -346,12 +346,12 @@ config parsing, header handling, and analytics filtering.
 Rejected Ideas
 ==============
 
-**Opt in instead of opt out.** Would break existing analytics. Most users
-don't care enough to opt in. Opt out matches industry practice. Also, opt-in
+**Opt-in instead of opt-out.** Would break existing analytics. Most users
+don't care enough to opt in. Opt-out matches industry practice. Also, opt-in
 data has little value—analytics companies need complete datasets, not the 2%
 who bother clicking a checkbox.
 
-**Per package opt out.** Too complex. If you need that level of control,
+**Per-package opt-out.** Too complex. If you need that level of control,
 use network level filtering.
 
 **Cryptographic proof of compliance.** No practical way to verify an index
@@ -366,7 +366,7 @@ exists for exactly this purpose. Use the standard.
 Open Issues
 ===========
 
-**What counts as analytics.** This targets third party data sharing. Internal
+**What counts as analytics.** This targets third-party data sharing. Internal
 stats, abuse prevention, that stays. Is the line clear enough?
 
 **Verification.** Users can't easily verify indexes honor this. Should we
