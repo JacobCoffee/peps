@@ -100,7 +100,7 @@ Why an HTTP Header
 ------------------
 
 The tool has to tell the index "this user opted out." An HTTP header does
-that without changing the Simple Repository API. It works for HTML responses
+that without changing the :ref:`packaging:simple-repository-api`. It works for HTML responses
 and JSON responses. The index just checks the header and filters accordingly.
 
 
