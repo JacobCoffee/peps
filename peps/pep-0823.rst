@@ -212,7 +212,7 @@ When an index gets a request with ``Prefer: no-analytics``, it SHOULD:
 * Return the package normally.
 * Leave this request out of data sent to third-party analytics.
 * Still use the request for abuse prevention, rate limiting, operational
-  monitoring, and legal compliance like OFAC screening.
+  monitoring, and legal compliance like  OFAC screening <https://ofac.treasury.gov/>__`.
 
 Indexes MAY still count these requests in aggregate stats they keep internal.
 
